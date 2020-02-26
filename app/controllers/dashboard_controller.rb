@@ -7,5 +7,6 @@ class DashboardController < ApplicationController
   def search
     search = params[:search]
     @channel = Channel.where("name LIKE ?", "%#{search}%")
+    render :text => ""
   end
 end
