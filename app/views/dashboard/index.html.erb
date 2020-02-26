@@ -1,15 +1,17 @@
-<div class="card">
-<% @channel.each do |channel|%>
-  <div class="card-header">
-   <%= channel.name %>
-  </div>
-  <% channel.shows.each do |show|%>
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p><%= show.name %></p>
-      <footer class="blockquote-footer"><%= show.timing %> <cite title="Source Title">Favourite</cite></footer>
-    </blockquote>
-  </div>
+<div class="card text-center">
+  <% if @channel.present? %>
+    <% @channel.each do |channel|%>
+      <div class="card-header">
+       <%= channel.name %>
+      </div>
+      <% channel.shows.each do |show|%>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p><%= show.name %></p>
+          <footer class="blockquote-footer"><%= show.timing %> <cite title="Source Title">Favourite</cite></footer>
+        </blockquote>
+      </div>
+       <% end %>
+     <% end %> 
    <% end %>
- <% end %> 
 </div>
