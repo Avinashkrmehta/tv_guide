@@ -1,0 +1,2 @@
+$("#channel_list").hide();
+$("#channel_list").html("<%= escape_javascript(render partial: 'dashboard/channel_show_list', locals: { channel: @channel }) %>");
